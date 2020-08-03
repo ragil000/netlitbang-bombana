@@ -53,6 +53,15 @@ class Journal extends CI_Controller {
 				$data['script']			= 'admin/journal/'.$content.'-list.js'; 
 	
 				return $data;
+			}else if($content == 'artikel-berita') {
+				$data					= $this->__getPagination($content, 'articles');
+				$data['head'] 			= 'Artikel dan Berita';
+				$data['content']		= 'Berisi artikel dan berita Litbang kabupaten Bombana.';
+				$data['title']			= 'Artikel dan Berita';
+				$data['node_modules']	= 'sweetalert2/dist/sweetalert2.all.min.js';
+				$data['script']			= 'admin/journal/'.$content.'-list.js'; 
+	
+				return $data;
 			}
 		}else if($type == 'create') {
 			if($content == 'agenda-kegiatan') {
@@ -68,6 +77,14 @@ class Journal extends CI_Controller {
 				$data['content']	= 'Informasi agenda kegiatan Litbang kabupaten Bombana.';
 				$data['title']		= 'Agenda Kegiatan Litbang Kabupaten Bombana';
 				$data['slug']		= 'rekomendasi';
+				$data['script']		= 'admin/journal/'.$content.'-create.js'; 
+	
+				return $data;
+			}else if($content == 'artikel-berita') {
+				$data['head'] 		= 'Artikel dan Berita';
+				$data['content']	= 'Berisi artikel dan berita Litbang kabupaten Bombana.';
+				$data['title']		= 'Artikel dan Berita';
+				$data['slug']		= 'artikel-berita';
 				$data['script']		= 'admin/journal/'.$content.'-create.js'; 
 	
 				return $data;
@@ -106,6 +123,15 @@ class Journal extends CI_Controller {
 				$data['content']	= 'Informasi agenda kegiatan Litbang kabupaten Bombana.';
 				$data['title']		= 'Agenda Kegiatan Litbang Kabupaten Bombana';
 				$data['slug']		= 'rekomendasi';
+				$data['script']		= 'admin/journal/'.$content.'-update.js'; 
+	
+				return $data;
+			}else if($content == 'artikel-berita') {
+				$data['data'] 		= $this->Journal_model->getDetail('articles', $id);
+				$data['head'] 		= 'Artikel dan Berita';
+				$data['content']	= 'Berisi artikel dan berita Litbang kabupaten Bombana.';
+				$data['title']		= 'Artikel dan Berita';
+				$data['slug']		= 'artikel-berita';
 				$data['script']		= 'admin/journal/'.$content.'-update.js'; 
 	
 				return $data;
@@ -182,6 +208,45 @@ class Journal extends CI_Controller {
 						$results	= [
 							'status'	=> FALSE,
 							'message'	=> 'File gagal di unggah.'
+						];
+					}
+				}else {
+					$results	= [
+						'status'	=> FALSE,
+						'message'	=> 'Data yang diinput tidak valid.'
+					];
+				}
+				return $results;
+			}if($content == 'artikel-berita') {
+				$results	= [
+					'status'	=> TRUE,
+					'message'	=> 'Artikel/berita berhasil di tambahkan.'
+				];
+
+				$this->form_validation->set_rules('title', 'Judul', 'trim|required');
+				$this->form_validation->set_rules('content', 'Isi', 'trim|required');
+				// $this->form_validation->set_rules('file', 'Gambar', 'required');
+				if($this->form_validation->run()) {
+					$file	= $this->Journal_model->uploadImage();
+					if($file['status']) {
+						$data	= [
+							'title'			=> $this->input->post('title'),
+							'content'		=> $this->input->post('content'),
+							'file'			=> $file['file_name'],
+							'type'			=> 'artikel-berita',
+							'created_by'	=> 1
+						];
+						$result	= $this->Journal_model->postData('articles', $data);
+						if(!$result) {
+							$results	= [
+								'status'	=> FALSE,
+								'message'	=> 'Artikel/berita gagal di tambahkan.'
+							];
+						}
+					}else {
+						$results	= [
+							'status'	=> FALSE,
+							'message'	=> 'Gambar gagal di unggah.'
 						];
 					}
 				}else {
@@ -349,6 +414,62 @@ class Journal extends CI_Controller {
 				}
 
 				return $results;
+			}else if($content == 'artikel-berita') {
+				$results	= [
+					'status'	=> TRUE,
+					'message'	=> 'Artikel/berita berhasil di update.'
+				];
+
+				if(empty($_FILES['file']['name'])) {
+					$data	= [
+						'title'			=> $this->input->post('title'),
+						'content'		=> $this->input->post('content'),
+						'updated_at'	=> date('Y-m-d'),
+						'updated_by'	=> 1
+					];
+					$result	= $this->Journal_model->putData('articles', $id, $data);
+					if(!$result) {
+						$results	= [
+							'status'	=> FALSE,
+							'message'	=> 'Artikel/berita gagal di update.'
+						];
+					}
+				}else {
+					$file	= $this->Journal_model->uploadImage();
+					if($file['status']) {
+						$details_data	= $this->Journal_model->getDetail('articles', $id);
+						if(file_exists('./uploads/images/'.$details_data[0]['file'])) {
+							unlink('./uploads/images/'.$details_data[0]['file']);
+						}
+						if(file_exists('./uploads/images/smalls/'.$details_data[0]['file'])) {
+							unlink('./uploads/images/smalls/'.$details_data[0]['file']);
+						}
+						if(file_exists('./uploads/images/thumbs/'.$details_data[0]['file'])) {
+							unlink('./uploads/images/thumbs/'.$details_data[0]['file']);
+						}
+						$data	= [
+							'title'			=> $this->input->post('title'),
+							'content'		=> $this->input->post('content'),
+							'file'			=> $file['file_name'],
+							'updated_at'	=> date('Y-m-d'),
+							'updated_by'	=> 1
+						];
+						$result	= $this->Journal_model->putData('articles', $id, $data);
+						if(!$result) {
+							$results	= [
+								'status'	=> FALSE,
+								'message'	=> 'Artikel/berita gagal di update.'
+							];
+						}
+					}else {
+						$results	= [
+							'status'	=> FALSE,
+							'message'	=> 'Gambar gagal di unggah.'
+						];
+					}
+				}
+
+				return $results;
 			}
 		}else if($type == 'delete') {
 			if($content == 'agenda-kegiatan') {
@@ -401,6 +522,31 @@ class Journal extends CI_Controller {
 					];
 				}
 				return $results;
+			}if($content == 'artikel-berita') {
+				$results	= [
+					'status'	=> TRUE,
+					'message'	=> 'Artikel/berita berhasil di hapus.'
+				];
+
+				$details_data	= $this->Journal_model->getDetail('articles', $id);
+				if(file_exists('./uploads/images/'.$details_data[0]['file'])) {
+					unlink('./uploads/images/'.$details_data[0]['file']);
+				}
+				if(file_exists('./uploads/images/smalls/'.$details_data[0]['file'])) {
+					unlink('./uploads/images/smalls/'.$details_data[0]['file']);
+				}
+				if(file_exists('./uploads/images/thumbs/'.$details_data[0]['file'])) {
+					unlink('./uploads/images/thumbs/'.$details_data[0]['file']);
+				}
+
+				$result	= $this->Journal_model->deleteData('articles', $id);
+				if(!$result) {
+					$results	= [
+						'status'	=> FALSE,
+						'message'	=> 'Artikel/berita gagal di hapus.'
+					];
+				}
+				return $results;
 			}
 		}
 	}
@@ -444,7 +590,7 @@ class Journal extends CI_Controller {
 	}
 
 	public function detail($content, $id) {
-		if($content == 'sop-kelitbangan' || $content == 'rik-bombana' || $content == 'agenda-kegiatan' || $content == 'rekomendasi') {
+		if($content == 'sop-kelitbangan' || $content == 'rik-bombana' || $content == 'agenda-kegiatan' || $content == 'rekomendasi' || $content == 'artikel-berita') {
 			$result	= $this->Journal_model->getDetail('articles', $id);
 			echo json_encode($result);
 		}
