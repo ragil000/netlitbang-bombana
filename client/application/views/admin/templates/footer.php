@@ -45,13 +45,19 @@
         <script type="text/javascript" src="<?=base_url()?>back/node_modules/simple-hotkeys/lib/hotkeys.js"></script>
         <script type="text/javascript" src="<?=base_url()?>back/node_modules/simple-uploader/dist/uploader.js"></script>
         <script type="text/javascript" src="<?=base_url()?>back/node_modules/simditor/lib/simditor.js"></script>
+        
+        <!-- by node_modules -->
+        <?php
+            if(isset($node_modules)) {
+        ?>
+        <script type="text/javascript" src="<?=base_url()?>back/node_modules/<?=$node_modules?>"></script>
+        <?php
+            }
+        ?>
 
         <!-- Custom inline -->
         <script type="text/javascript">
             const base_url = '<?=base_url()?>'
-            var editor = new Simditor({
-                textarea: $('#editor')
-            });
         </script>
 
         <!-- RMY Library -->

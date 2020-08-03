@@ -61,7 +61,7 @@
           </li>
           <li class="drop-down"><a href="">Publikasi</a>
             <ul>
-              <li><a href="<?=base_url('publication/sop-kelitbangan')?>">SOP Kelitbangan</a></li>
+              <li><a href="<?=base_url('journal/sop-kelitbangan')?>">SOP Kelitbangan</a></li>
               <li><a href="#">RIK Kab. Bombana</a></li>
               <li><a href="#">Agenda Kegiatan</a></li>
               <li><a href="#">Artikel dan Berita</a></li>

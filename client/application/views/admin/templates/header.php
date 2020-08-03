@@ -16,6 +16,9 @@
         <!-- Argon CSS -->
         <link type="text/css" href="<?=base_url()?>back/assets/css/argon.css?v=1.0.0" rel="stylesheet">
 
+        <!-- custom CSS -->
+        <link type="text/css" href="<?=base_url()?>back/assets/css/custom.css" rel="stylesheet">
+
         <!-- SIM editor -->
         <link rel="stylesheet" type="text/css" href="<?=base_url()?>back/node_modules/simditor/styles/simditor.css" />
 
@@ -150,29 +153,34 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" id="parent-nav-publication" href="#nav-publication" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="nav-publication">
+                            <a class="nav-link active" id="parent-nav-journal" href="#nav-journal" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="nav-journal">
                                 <i class="ni ni-notification-70 text-yellow"></i>
-                                <span class="nav-link-text">Publikasi</span>
+                                <span class="nav-link-text">Jurnal</span>
                             </a>
-                            <div class="collapse show" id="nav-publication">
+                            <div class="collapse show" id="nav-journal">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="../../pages/dashboards/dashboard.html" class="nav-link active" id="child-nav-publication-1">
+                                        <a href="<?=base_url('admin/journal/sop-kelitbangan')?>" class="nav-link active" id="child-nav-journal-1">
                                         <span class="sidenav-normal"> SOP Kelitbangan </span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="../../pages/dashboards/dashboard.html" class="nav-link" id="child-nav-publication-2">
+                                        <a href="<?=base_url('admin/journal/rik-bombana')?>" class="nav-link" id="child-nav-journal-2">
                                         <span class="sidenav-normal"> RIK Kab. Bombana </span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="../../pages/dashboards/dashboard.html" class="nav-link" id="child-nav-publication-3">
+                                        <a href="<?=base_url('admin/journal/agenda-kegiatan')?>" class="nav-link" id="child-nav-journal-3">
                                         <span class="sidenav-normal"> Agenda Kegiatan </span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="../../pages/dashboards/dashboard.html" class="nav-link" id="child-nav-publication-4">
+                                        <a href="<?=base_url('admin/journal/rekomendasi')?>" class="nav-link" id="child-nav-journal-4">
+                                        <span class="sidenav-normal"> Rekomendasi </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?=base_url('admin/journal/artikel-berita')?>" class="nav-link" id="child-nav-journal-5">
                                         <span class="sidenav-normal"> Artikel/Berita </span>
                                         </a>
                                     </li>

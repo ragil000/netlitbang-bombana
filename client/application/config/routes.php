@@ -53,10 +53,12 @@ $route['default_controller'] = 'Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['publication/(:any)'] = 'Publication/index/$1';
+$route['journal/(:any)'] = 'journal/index/$1';
 
 
-$route['admin/publication/detail/(:num)'] = 'admin/Publication/detail/$1';
-$route['admin/publication/edit/(:any)/(:num)'] = 'admin/Publication/edit/$1/$2';
-$route['admin/publication/(:any)'] = 'admin/Publication/index/$1';
-$route['admin/publication/(:any)/(:num)'] = 'admin/Publication/index/$1/$2';
+$route['admin/journal/detail/(:any)/(:num)'] = 'admin/journal/detail/$1/$2';
+$route['admin/journal/create/(:any)'] = 'admin/journal/create/$1';
+$route['admin/journal/update/(:any)/(:num)'] = 'admin/journal/update/$1/$2';
+$route['admin/journal/put/(:any)/(:num)'] = 'admin/journal/put/$1/$2';
+$route['admin/journal/(:any)'] = 'admin/journal/index/$1';
+$route['admin/journal/(:any)/(:num)'] = 'admin/journal/index/$1/$2';
