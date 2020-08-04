@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Net Litbang | Bombana</title>
+  <title>Netlitbang | Bombana</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -43,37 +43,38 @@
     <div class="container">
 
       <div class="logo float-left">
-        <h1 class="text-light"><a href="index.html"><span>NETLITBANG</span></a></h1>
+        <h1 class="text-light"><a href="<?=base_url()?>"><span>NETLITBANG</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="<?=base_url('front/')?>assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Beranda</a></li>
-          <li><a href="blog.html">Usulan Penelitian</a></li>
-          <li class="drop-down"><a href="">Hasil Kelitbangan</a>
+          <li id="parent-1" class="parent-menu active"><a href="<?=base_url()?>">Beranda</a></li>
+          <li id="parent-2" class="parent-menu"><a href="#">Usulan Penelitian</a></li>
+          <li id="parent-3" class="drop-down parent-menu"><a href="">Hasil Kelitbangan</a>
             <ul>
-              <li><a href="#">Sosial dan Pemerintahan</a></li>
-              <li><a href="#">Ekonomi dan Pembangunan</a></li>
-              <li><a href="#">Inovasi dan Pelayanan Publik</a></li>
+              <li><a href="<?=base_url('litbang/sosial-pemerintahan')?>">Sosial dan Pemerintahan</a></li>
+              <li><a href="<?=base_url('litbang/ekonomi-pembangunan')?>">Ekonomi dan Pembangunan</a></li>
+              <li><a href="<?=base_url('litbang/inovasi-pelayanan-publik')?>">Inovasi dan Pelayanan Publik</a></li>
             </ul>
           </li>
-          <li class="drop-down"><a href="">Publikasi</a>
+          <li id="parent-4" class="drop-down parent-menu"><a href="">Jurnal</a>
             <ul>
               <li><a href="<?=base_url('journal/sop-kelitbangan')?>">SOP Kelitbangan</a></li>
-              <li><a href="#">RIK Kab. Bombana</a></li>
-              <li><a href="#">Agenda Kegiatan</a></li>
-              <li><a href="#">Artikel dan Berita</a></li>
+              <li><a href="<?=base_url('journal/rik-bombana')?>">RIK Kab. Bombana</a></li>
+              <li><a href="<?=base_url('journal/agenda-kegiatan')?>">Agenda Kegiatan</a></li>
+              <li><a href="<?=base_url('journal/rekomendasi')?>">Rekomendasi</a></li>
+              <li><a href="<?=base_url('journal/artikel-berita')?>">Artikel dan Berita</a></li>
             </ul>
           </li>
-          <li class="drop-down"><a href="">Galeri</a>
+          <li id="parent-5" class="drop-down parent-menu"><a href="">Galeri</a>
             <ul>
               <li><a href="#">Foto Kegiatan</a></li>
               <li><a href="#">Video</a></li>
             </ul>
           </li>
-          <li class="drop-down"><a href="">Profil</a>
+          <li id="parent-6" class="drop-down parent-menu"><a href="">Profil</a>
             <ul>
               <li><a href="#">Definisi</a></li>
               <li><a href="#">Struktur Organisasi</a></li>

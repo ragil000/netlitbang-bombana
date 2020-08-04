@@ -6,11 +6,11 @@
           <div class="card shadow">
             <div class="card-header border-0">
               <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                   <h3 class="mb-0 mt-2"><?=$head?></h3>
                 </div>
-                <div class="col-lg-9 text-left">
-                  <a href="<?=base_url('admin/journal/create/artikel-berita')?>" class="btn btn-primary"><i class="ni ni-single-copy-04"></i> Tambah</a>
+                <div class="col-lg-8 text-left">
+                  <a href="<?=base_url('admin/litbang/create/ekonomi-pembangunan')?>" class="btn btn-primary"><i class="ni ni-single-copy-04"></i> Tambah</a>
                 </div>
               </div>
             </div>
@@ -29,8 +29,8 @@
                   <tr>
                     <th scope="col">Judul</th>
                     <th scope="col">Isi</th>
+                    <th scope="col">File</th>
                     <th scope="col">Tanggal</th>
-                    <th scope="col">Jam</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
@@ -42,11 +42,16 @@
                     <tr>
                         <td><?=!empty($value['title']) ? $value['title'] : '-'?></td>
                         <td><?=_limitText($value['content'], 60)?></td>
+                        <td>
+                          <a href="<?=base_url('uploads/files/').$value['file']?>" class="btn btn-icon btn-success btn-sm" download>
+                            <span class="btn-inner--icon"><i class="fa fa-download"></i></span>
+                          </a>
+                          <?=_limitText($value['file'], 25)?>
+                        </td>
                         <td><?=_dateShortID($value['created_at'])?></td>
-                        <td><?=_timestampToTime($value['created_at'])?></td>
                         <td class="text-right">
                             <a href="#" class="btn btn-sm btn-primary" onclick="detailModal('<?=$value['id']?>')"><i class="fa fa-eye"></i></a>
-                            <a href="<?=base_url('admin/journal/update/artikel-berita/').$value['id']?>" class="btn btn-sm btn-warning"><i class="fa fa-pen"></i></a>
+                            <a href="<?=base_url('admin/litbang/update/ekonomi-pembangunan/').$value['id']?>" class="btn btn-sm btn-warning"><i class="fa fa-pen"></i></a>
                             <a href="#" class="btn btn-sm btn-danger" onclick="beforeDelete('<?=$value['id']?>')"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
@@ -83,8 +88,8 @@
                       <div class="modal-body" style="overflow-y: scroll; height:400px;">
                           <h3 id="title">Title</h3>
                           <h6><span id="date"><i class="ni ni-watch-time"></i> 20 Jan 2020</span></h6>
-                          <div id="image"></div>
                           <div id="content"class="text-medium"></div>
+                          <div id="file"></div>
                       </div>
                       <div class="modal-footer">
                           <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Keluar</button>

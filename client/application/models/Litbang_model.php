@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Journal_model extends CI_Model{
+class Litbang_model extends CI_Model{
 
     public function getContentData($type, $table, $limit, $start){
                       $this->db->limit($limit, $start);

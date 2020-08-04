@@ -6,10 +6,10 @@
           <div class="card shadow">
             <div class="card-header border-0">
               <div class="row">
-                <div class="col-2">
+                <div class="col-lg-2">
                   <h3 class="mb-0 mt-2"><?=$head?></h3>
                 </div>
-                <div class="col-10 text-left">
+                <div class="col-lg-10 text-left">
                   <a href="<?=base_url('admin/journal/create/rekomendasi')?>" class="btn btn-primary"><i class="ni ni-single-copy-04"></i> Tambah</a>
                 </div>
               </div>

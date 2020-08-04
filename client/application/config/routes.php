@@ -53,12 +53,26 @@ $route['default_controller'] = 'Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['journal/(:any)'] = 'journal/index/$1';
+$route['litbang/detail/(:any)/(:any)']          = 'litbang/detail/$1/$2';
+$route['litbang/(:any)']                        = 'litbang/index/$1';
+$route['litbang/(:any)/(:num)']                 = 'litbang/index/$1/$2';
 
+$route['journal/detail/(:any)/(:any)']          = 'journal/detail/$1/$2';
+$route['journal/(:any)']                        = 'journal/index/$1';
+$route['journal/(:any)/(:num)']                 = 'journal/index/$1/$2';
 
-$route['admin/journal/detail/(:any)/(:num)'] = 'admin/journal/detail/$1/$2';
-$route['admin/journal/create/(:any)'] = 'admin/journal/create/$1';
-$route['admin/journal/update/(:any)/(:num)'] = 'admin/journal/update/$1/$2';
-$route['admin/journal/put/(:any)/(:num)'] = 'admin/journal/put/$1/$2';
-$route['admin/journal/(:any)'] = 'admin/journal/index/$1';
-$route['admin/journal/(:any)/(:num)'] = 'admin/journal/index/$1/$2';
+$route['admin']                                 = 'admin/Auth/index';
+
+$route['admin/litbang/detail/(:any)/(:num)']    = 'admin/litbang/detail/$1/$2';
+$route['admin/litbang/create/(:any)']           = 'admin/litbang/create/$1';
+$route['admin/litbang/update/(:any)/(:num)']    = 'admin/litbang/update/$1/$2';
+$route['admin/litbang/put/(:any)/(:num)']       = 'admin/litbang/put/$1/$2';
+$route['admin/litbang/(:any)']                  = 'admin/litbang/index/$1';
+$route['admin/litbang/(:any)/(:num)']           = 'admin/litbang/index/$1/$2';
+
+$route['admin/journal/detail/(:any)/(:num)']    = 'admin/journal/detail/$1/$2';
+$route['admin/journal/create/(:any)']           = 'admin/journal/create/$1';
+$route['admin/journal/update/(:any)/(:num)']    = 'admin/journal/update/$1/$2';
+$route['admin/journal/put/(:any)/(:num)']       = 'admin/journal/put/$1/$2';
+$route['admin/journal/(:any)']                  = 'admin/journal/index/$1';
+$route['admin/journal/(:any)/(:num)']           = 'admin/journal/index/$1/$2';

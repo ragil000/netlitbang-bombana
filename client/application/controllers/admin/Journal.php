@@ -5,6 +5,9 @@ class Journal extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
+		if(!isset($_SESSION['auth_login'])) {
+			redirect('admin/Auth');
+		}
 		$this->load->model('admin/Journal_model');
 	}
 
@@ -68,7 +71,7 @@ class Journal extends CI_Controller {
 				$data['head'] 		= 'Agenda Kegiatan';
 				$data['content']	= 'Informasi agenda kegiatan Litbang kabupaten Bombana.';
 				$data['title']		= 'Agenda Kegiatan Litbang Kabupaten Bombana';
-				$data['slug']		= 'rekomendasi';
+				$data['slug']		= 'agenda-kegiatan';
 				$data['script']		= 'admin/journal/'.$content.'-create.js'; 
 	
 				return $data;
@@ -149,6 +152,7 @@ class Journal extends CI_Controller {
 				if($this->form_validation->run()) {
 					$file	= $this->Journal_model->uploadImage();
 					if($file['status']) {
+						$slug = url_title($this->input->post('title'), 'dash', true).'-'.time();
 						$data	= [
 							'title'			=> $this->input->post('title'),
 							'content'		=> $this->input->post('content'),
@@ -156,6 +160,7 @@ class Journal extends CI_Controller {
 							'end_date'		=> $this->input->post('end_date'),
 							'file'			=> $file['file_name'],
 							'type'			=> 'agenda-kegiatan',
+							'slug'			=> $slug,
 							'created_by'	=> 1
 						];
 						$result	= $this->Journal_model->postData('articles', $data);
@@ -190,11 +195,13 @@ class Journal extends CI_Controller {
 				if($this->form_validation->run()) {
 					$file	= $this->Journal_model->uploadPDF();
 					if($file['status']) {
+						$slug = url_title($this->input->post('title'), 'dash', true).'-'.time();
 						$data	= [
 							'title'			=> $this->input->post('title'),
 							'content'		=> $this->input->post('content'),
 							'file'			=> $file['file_name'],
 							'type'			=> 'rekomendasi',
+							'slug'			=> $slug,
 							'created_by'	=> 1
 						];
 						$result	= $this->Journal_model->postData('articles', $data);
@@ -229,11 +236,13 @@ class Journal extends CI_Controller {
 				if($this->form_validation->run()) {
 					$file	= $this->Journal_model->uploadImage();
 					if($file['status']) {
+						$slug = url_title($this->input->post('title'), 'dash', true).'-'.time();
 						$data	= [
 							'title'			=> $this->input->post('title'),
 							'content'		=> $this->input->post('content'),
 							'file'			=> $file['file_name'],
 							'type'			=> 'artikel-berita',
+							'slug'			=> $slug,
 							'created_by'	=> 1
 						];
 						$result	= $this->Journal_model->postData('articles', $data);
@@ -305,11 +314,13 @@ class Journal extends CI_Controller {
 				];
 
 				if(empty($_FILES['file']['name'])) {
+					$slug = url_title($this->input->post('title'), 'dash', true).'-'.time();
 					$data	= [
 						'title'			=> $this->input->post('title'),
 						'content'		=> $this->input->post('content'),
 						'start_date'	=> $this->input->post('start_date'),
 						'end_date'		=> $this->input->post('end_date'),
+						'slug'			=> $slug,
 						'updated_at'	=> date('Y-m-d'),
 						'updated_by'	=> 1
 					];
@@ -333,12 +344,14 @@ class Journal extends CI_Controller {
 						if(file_exists('./uploads/images/thumbs/'.$details_data[0]['file'])) {
 							unlink('./uploads/images/thumbs/'.$details_data[0]['file']);
 						}
+						$slug = url_title($this->input->post('title'), 'dash', true).'-'.time();
 						$data	= [
 							'title'			=> $this->input->post('title'),
 							'content'		=> $this->input->post('content'),
 							'start_date'	=> $this->input->post('start_date'),
 							'end_date'		=> $this->input->post('end_date'),
 							'file'			=> $file['file_name'],
+							'slug'			=> $slug,
 							'updated_at'	=> date('Y-m-d'),
 							'updated_by'	=> 1
 						];
@@ -365,9 +378,11 @@ class Journal extends CI_Controller {
 				];
 
 				if(empty($_FILES['file']['name'])) {
+					$slug = url_title($this->input->post('title'), 'dash', true).'-'.time();
 					$data	= [
 						'title'			=> $this->input->post('title'),
 						'content'		=> $this->input->post('content'),
+						'slug'			=> $slug,
 						'updated_at'	=> date('Y-m-d'),
 						'updated_by'	=> 1
 					];
@@ -385,16 +400,12 @@ class Journal extends CI_Controller {
 						if(file_exists('./uploads/files/'.$details_data[0]['file'])) {
 							unlink('./uploads/files/'.$details_data[0]['file']);
 						}
-						if(file_exists('./uploads/files/smalls/'.$details_data[0]['file'])) {
-							unlink('./uploads/files/smalls/'.$details_data[0]['file']);
-						}
-						if(file_exists('./uploads/files/thumbs/'.$details_data[0]['file'])) {
-							unlink('./uploads/files/thumbs/'.$details_data[0]['file']);
-						}
+						$slug = url_title($this->input->post('title'), 'dash', true).'-'.time();
 						$data	= [
 							'title'			=> $this->input->post('title'),
 							'content'		=> $this->input->post('content'),
 							'file'			=> $file['file_name'],
+							'slug'			=> $slug,
 							'updated_at'	=> date('Y-m-d'),
 							'updated_by'	=> 1
 						];
@@ -421,9 +432,11 @@ class Journal extends CI_Controller {
 				];
 
 				if(empty($_FILES['file']['name'])) {
+					$slug = url_title($this->input->post('title'), 'dash', true).'-'.time();
 					$data	= [
 						'title'			=> $this->input->post('title'),
 						'content'		=> $this->input->post('content'),
+						'slug'			=> $slug,
 						'updated_at'	=> date('Y-m-d'),
 						'updated_by'	=> 1
 					];
@@ -447,10 +460,12 @@ class Journal extends CI_Controller {
 						if(file_exists('./uploads/images/thumbs/'.$details_data[0]['file'])) {
 							unlink('./uploads/images/thumbs/'.$details_data[0]['file']);
 						}
+						$slug = url_title($this->input->post('title'), 'dash', true).'-'.time();
 						$data	= [
 							'title'			=> $this->input->post('title'),
 							'content'		=> $this->input->post('content'),
 							'file'			=> $file['file_name'],
+							'slug'			=> $slug,
 							'updated_at'	=> date('Y-m-d'),
 							'updated_by'	=> 1
 						];
@@ -506,12 +521,6 @@ class Journal extends CI_Controller {
 				$details_data	= $this->Journal_model->getDetail('articles', $id);
 				if(file_exists('./uploads/files/'.$details_data[0]['file'])) {
 					unlink('./uploads/files/'.$details_data[0]['file']);
-				}
-				if(file_exists('./uploads/files/smalls/'.$details_data[0]['file'])) {
-					unlink('./uploads/files/smalls/'.$details_data[0]['file']);
-				}
-				if(file_exists('./uploads/files/thumbs/'.$details_data[0]['file'])) {
-					unlink('./uploads/files/thumbs/'.$details_data[0]['file']);
 				}
 
 				$result	= $this->Journal_model->deleteData('articles', $id);

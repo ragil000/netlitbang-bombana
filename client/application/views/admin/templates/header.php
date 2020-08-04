@@ -58,8 +58,9 @@
                 </button>
 
                 <!-- Brand -->
-                <a class="navbar-brand pt-0" href="<?=base_url()?>back/index.html">
-                    <img src="<?=base_url()?>back/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+                <a class="navbar-brand pt-0" href="<?=base_url('admin/journal')?>">
+                    <!-- <img src="<?=base_url()?>back/assets/img/brand/blue.png" class="navbar-brand-img" alt="..."> -->
+                    <h2 class="text-primary">Netlitbang</h2>
                 </a>
 
                 <!-- Collapse -->
@@ -69,8 +70,9 @@
                     <div class="navbar-collapse-header d-md-none">
                         <div class="row">
                             <div class="col-6 collapse-brand">
-                                <a href="<?=base_url()?>back/index.html">
-                                    <img src="<?=base_url()?>back/assets/img/brand/blue.png">
+                                <a href="<?=base_url('admin/journal')?>">
+                                    <!-- <img src="<?=base_url()?>back/assets/img/brand/blue.png"> -->
+                                    <h2 class="text-primary">Netlitbang</h2>
                                 </a>
                             </div>
                             <div class="col-6 collapse-close">
@@ -81,23 +83,11 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Form -->
-                    <!-- <form class="mt-4 mb-3 d-md-none">
-                        <div class="input-group input-group-rounded input-group-merge">
-                            <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <span class="fa fa-search"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </form> -->
                     
                     <!-- Navigation -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?=base_url()?>back/index.html">
+                            <a class="nav-link" href="<?=base_url('admin/journal')?>">
                                 <i class="ni ni-tv-2 text-primary"></i> Beranda
                             </a>
                         </li>
@@ -136,6 +126,31 @@
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="parent-nav-litbang" href="#nav-litbang" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="nav-litbang">
+                                <i class="ni ni-single-copy-04 text-primary"></i>
+                                <span class="nav-link-text">Hasil Kelitbangan</span>
+                            </a>
+                            <div class="collapse show" id="nav-litbang">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="<?=base_url('admin/litbang/sosial-pemerintahan')?>" class="nav-link active" id="child-nav-litbang-1">
+                                        <span class="sidenav-normal"> Sosial dan Pemerintahan </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?=base_url('admin/litbang/ekonomi-pembangunan')?>" class="nav-link active" id="child-nav-litbang-2">
+                                        <span class="sidenav-normal"> Ekonomi dan Pembangunan </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?=base_url('admin/litbang/inovasi-pelayanan-publik')?>" class="nav-link active" id="child-nav-litbang-3">
+                                        <span class="sidenav-normal"> Inovasi dan Pelayanan Publik </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
 
                     <!-- Divider -->
@@ -144,7 +159,7 @@
                     <!-- Navigation -->
                     <ul class="navbar-nav mb-md-3">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="<?=base_url('admin/Auth/logout')?>">
                                 <i class="ni ni-curved-next"></i> Keluar
                             </a>
                         </li>
@@ -172,7 +187,7 @@
                                         <img alt="Image placeholder" src="<?=base_url()?>back/assets/img/theme/user.jpg">
                                     </span>
                                     <div class="media-body ml-2 d-none d-lg-block">
-                                        <span class="mb-0 text-sm  font-weight-bold">John Doe</span>
+                                        <span class="mb-0 text-sm  font-weight-bold"><?=$_SESSION['username']?></span>
                                     </div>
                                 </div>
                             </a>
@@ -180,14 +195,14 @@
                                 <div class=" dropdown-header noti-title">
                                     <h6 class="text-overflow m-0">Selamat datang!</h6>
                                 </div>
-                                <a href="<?=base_url()?>back/examples/profile.html" class="dropdown-item">
+                                <a href="#" class="dropdown-item">
                                     <i class="ni ni-settings-gear-65"></i>
                                     <span>Pengaturan</span>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a href="#!" class="dropdown-item">
+                                <a href="<?=base_url('admin/Auth/logout')?>" class="dropdown-item">
                                     <i class="ni ni-curved-next"></i>
-                                    <span>Logout</span>
+                                    <span>Keluar</span>
                                 </a>
                             </div>
                         </li>
