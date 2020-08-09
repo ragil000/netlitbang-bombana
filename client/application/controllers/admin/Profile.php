@@ -333,10 +333,24 @@ class Profile extends CI_Controller {
 				return $results;
 			}
 		}else if($type == 'delete') {
-			if($content == 'agenda-kegiatan') {
+			if($content == 'definisi') {
 				$results	= [
 					'status'	=> TRUE,
-					'message'	=> 'Agenda kegiatan berhasil di hapus.'
+					'message'	=> 'Definisi netlitbang berhasil di hapus.'
+				];
+
+				$result	= $this->Profile_model->deleteData('articles', $id);
+				if(!$result) {
+					$results	= [
+						'status'	=> FALSE,
+						'message'	=> 'Definisi netlitbang gagal di hapus.'
+					];
+				}
+				return $results;
+			}else if($content == 'struktur-organisai') {
+				$results	= [
+					'status'	=> TRUE,
+					'message'	=> 'Struktur organisasi berhasil di hapus.'
 				];
 
 				$details_data	= $this->Profile_model->getDetail('articles', $id);
@@ -354,14 +368,14 @@ class Profile extends CI_Controller {
 				if(!$result) {
 					$results	= [
 						'status'	=> FALSE,
-						'message'	=> 'Agenda kegiatan gagal di hapus.'
+						'message'	=> 'Struktur organisasi gagal di hapus.'
 					];
 				}
 				return $results;
-			}else if($content == 'rekomendasi') {
+			}else if($content == 'regulasi') {
 				$results	= [
 					'status'	=> TRUE,
-					'message'	=> 'Rekomendasi berhasil di hapus.'
+					'message'	=> 'Regulasi berhasil di hapus.'
 				];
 
 				$details_data	= $this->Profile_model->getDetail('articles', $id);
@@ -373,32 +387,21 @@ class Profile extends CI_Controller {
 				if(!$result) {
 					$results	= [
 						'status'	=> FALSE,
-						'message'	=> 'Rekomendasi gagal di hapus.'
+						'message'	=> 'Regulasi gagal di hapus.'
 					];
 				}
 				return $results;
-			}if($content == 'artikel-berita') {
+			}else if($content == 'kontak-kami') {
 				$results	= [
 					'status'	=> TRUE,
-					'message'	=> 'Artikel/berita berhasil di hapus.'
+					'message'	=> 'Kontak netlitbang berhasil di hapus.'
 				];
-
-				$details_data	= $this->Profile_model->getDetail('articles', $id);
-				if(file_exists('./uploads/images/'.$details_data[0]['file'])) {
-					unlink('./uploads/images/'.$details_data[0]['file']);
-				}
-				if(file_exists('./uploads/images/smalls/'.$details_data[0]['file'])) {
-					unlink('./uploads/images/smalls/'.$details_data[0]['file']);
-				}
-				if(file_exists('./uploads/images/thumbs/'.$details_data[0]['file'])) {
-					unlink('./uploads/images/thumbs/'.$details_data[0]['file']);
-				}
 
 				$result	= $this->Profile_model->deleteData('articles', $id);
 				if(!$result) {
 					$results	= [
 						'status'	=> FALSE,
-						'message'	=> 'Artikel/berita gagal di hapus.'
+						'message'	=> 'Kontak netlitbang gagal di hapus.'
 					];
 				}
 				return $results;
@@ -445,7 +448,7 @@ class Profile extends CI_Controller {
 	}
 
 	public function detail($content, $id) {
-		if($content == 'sop-kelitbangan' || $content == 'rik-bombana' || $content == 'agenda-kegiatan' || $content == 'rekomendasi' || $content == 'artikel-berita') {
+		if($content == 'definisi' || $content == 'struktur-organisasi' || $content == 'regulasi' || $content == 'kontak-kami') {
 			$result	= $this->Profile_model->getDetail('articles', $id);
 			echo json_encode($result);
 		}

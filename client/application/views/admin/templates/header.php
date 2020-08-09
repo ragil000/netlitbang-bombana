@@ -151,6 +151,36 @@
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="parent-nav-profile" href="#nav-profile" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="nav-profile">
+                                <i class="ni ni-single-copy-04 text-primary"></i>
+                                <span class="nav-link-text">Profil</span>
+                            </a>
+                            <div class="collapse show" id="nav-profile">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="<?=base_url('admin/profile/definisi')?>" class="nav-link active" id="child-nav-profile-1">
+                                        <span class="sidenav-normal"> Definisi </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?=base_url('admin/profile/struktur-organisasi')?>" class="nav-link active" id="child-nav-profile-2">
+                                        <span class="sidenav-normal"> Struktur Organisasi </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?=base_url('admin/profile/regulasi')?>" class="nav-link active" id="child-nav-profile-3">
+                                        <span class="sidenav-normal"> Regulasi </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?=base_url('admin/profile/kontak-kami')?>" class="nav-link active" id="child-nav-profile-4">
+                                        <span class="sidenav-normal"> Kontak Kami </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
 
                     <!-- Divider -->
