@@ -8,14 +8,14 @@ class Galery extends CI_Controller {
 		if(!isset($_SESSION['auth_login'])) {
 			redirect('admin/Auth');
 		}
-		$this->load->model('admin/Galeries_model');
+		$this->load->model('admin/Galery_model');
 	}
 
 	public function index($content = 'foto-kegiatan', $page = 1)
 	{
 		$data	= $this->__getContentData('list', $content);
 		$this->load->view('admin/templates/header', $data);
-		$this->load->view('admin/pages/galeries/'.$content.'-list');
+		$this->load->view('admin/pages/galery/'.$content.'-list');
 		$this->load->view('admin/templates/footer');
 	}
 
@@ -26,7 +26,8 @@ class Galery extends CI_Controller {
 				$data['head']		= 'Foto-Foto Kegiatan';
 				$data['content']	= 'List dokumentasi foto-foto kegiatan Litbang kabupaten Bombana.';
 				$data['title']		= 'Foto-Foto Kegiatan';
-				$data['script']		= 'admin/galeries/'.$content.'-list.js'; 
+				$data['node_modules']	= 'sweetalert2/dist/sweetalert2.all.min.js';
+				$data['script']		= 'admin/galery/'.$content.'-list.js'; 
 	
 				return $data;
 			}else if($content == 'video') {
@@ -34,7 +35,8 @@ class Galery extends CI_Controller {
 				$data['head'] 		= 'Video Litbang Kabupaten Bombana';
 				$data['content']	= 'List video Litbang kabupaten Bombana.';
 				$data['title']		= 'Video Litbang Kabupaten Bombana';
-				$data['script']		= 'admin/galeries/'.$content.'-list.js'; 
+				$data['node_modules']	= 'sweetalert2/dist/sweetalert2.all.min.js';
+				$data['script']		= 'admin/galery/'.$content.'-list.js'; 
 	
 				return $data;
 			}
@@ -44,7 +46,7 @@ class Galery extends CI_Controller {
 				$data['content']	= 'List dokumentasi foto-foto kegiatan Litbang kabupaten Bombana.';
 				$data['title']		= 'Foto-Foto Kegiatan';
 				$data['slug']		= 'foto-kegiatan';
-				$data['script']		= 'admin/galeries/'.$content.'-create.js'; 
+				$data['script']		= 'admin/galery/'.$content.'-create.js'; 
 	
 				return $data;
 			}else if($content == 'video') {
@@ -52,7 +54,7 @@ class Galery extends CI_Controller {
 				$data['content']	= 'List video Litbang kabupaten Bombana.';
 				$data['title']		= 'Video Litbang Kabupaten Bombana';
 				$data['slug']		= 'video';
-				$data['script']		= 'admin/galeries/'.$content.'-create.js'; 
+				$data['script']		= 'admin/galery/'.$content.'-create.js'; 
 	
 				return $data;
 			}
@@ -63,7 +65,7 @@ class Galery extends CI_Controller {
 				$data['content']	= 'List dokumentasi foto-foto kegiatan Litbang kabupaten Bombana.';
 				$data['title']		= 'Foto-Foto Kegiatan';
 				$data['slug']		= 'foto-kegiatan';
-				$data['script']		= 'admin/galeries/'.$content.'-update.js'; 
+				$data['script']		= 'admin/galery/'.$content.'-update.js'; 
 	
 				return $data;
 			}else if($content == 'video') {
@@ -72,7 +74,7 @@ class Galery extends CI_Controller {
 				$data['content']	= 'List video Litbang kabupaten Bombana.';
 				$data['title']		= 'Video Litbang Kabupaten Bombana';
 				$data['slug']		= 'video';
-				$data['script']		= 'admin/galeries/'.$content.'-update.js'; 
+				$data['script']		= 'admin/galery/'.$content.'-update.js'; 
 	
 				return $data;
 			}
@@ -366,7 +368,7 @@ class Galery extends CI_Controller {
 		$data				= $this->__getContentData('create', $content);
 
 		$this->load->view('admin/templates/header', $data);
-		$this->load->view('admin/pages/galeries/'.$content.'-create');
+		$this->load->view('admin/pages/galery/'.$content.'-create');
 		$this->load->view('admin/templates/footer');
 	}
 
@@ -374,7 +376,7 @@ class Galery extends CI_Controller {
 		$data		= $this->__getContentData('update', $content, $id);
 		$data['id']	= $id;
 		$this->load->view('admin/templates/header', $data);
-		$this->load->view('admin/pages/galeries/'.$content.'-update');
+		$this->load->view('admin/pages/galery/'.$content.'-update');
 		$this->load->view('admin/templates/footer');
 	}
 
@@ -382,10 +384,10 @@ class Galery extends CI_Controller {
 		$results	= $this->__getContentData('post', $content);
 		if($results['status']) {
 			$this->session->set_flashdata(['flash_message' => TRUE, 'status' => 'success', 'message' => $results['message']]);
-			redirect(base_url('admin/galeries/create/'.$content));
+			redirect(base_url('admin/galery/create/'.$content));
 		}else {
 			$this->session->set_flashdata(['flash_message' => TRUE, 'status' => 'danger', 'message' => $results['message']]);
-			redirect(base_url('admin/galeries/create/'.$content));
+			redirect(base_url('admin/galery/create/'.$content));
 		}
 	}
 
@@ -394,10 +396,10 @@ class Galery extends CI_Controller {
 		
 		if($results['status']) {
 			$this->session->set_flashdata(['flash_message' => TRUE, 'status' => 'success', 'message' => $results['message']]);
-			redirect(base_url('admin/galeries/'.$content));
+			redirect(base_url('admin/galery/'.$content));
 		}else {
 			$this->session->set_flashdata(['flash_message' => TRUE, 'status' => 'danger', 'message' => $results['message']]);
-			redirect(base_url('admin/galeries/update/'.$content).$id);
+			redirect(base_url('admin/galery/update/'.$content).$id);
 		}
 	}
 
@@ -406,10 +408,10 @@ class Galery extends CI_Controller {
 		
 		if($results['status']) {
 			$this->session->set_flashdata(['flash_message' => TRUE, 'status' => 'success', 'message' => $results['message']]);
-			redirect(base_url('admin/galeries/'.$content));
+			redirect(base_url('admin/galery/'.$content));
 		}else {
 			$this->session->set_flashdata(['flash_message' => TRUE, 'status' => 'danger', 'message' => $results['message']]);
-			redirect(base_url('admin/galeries/update/'.$content).$id);
+			redirect(base_url('admin/galery/update/'.$content).$id);
 		}
 	}
 }

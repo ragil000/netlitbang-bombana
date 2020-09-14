@@ -39,7 +39,7 @@
                         <td><?=_timestampToTime($value['created_at'])?></td>
                         <td class="text-right">
                             <a href="#" class="btn btn-sm btn-primary" onclick="detailModal('<?=$value['id']?>')"><i class="ni ni-button-play"></i></a>
-                            <a href="<?=base_url('admin/journal/update/definisi/').$value['id']?>" class="btn btn-sm btn-warning"><i class="ni ni-caps-small"></i></a>
+                            <a href="<?=base_url('admin/profile/update/definisi/').$value['id']?>" class="btn btn-sm btn-warning"><i class="ni ni-caps-small"></i></a>
                         </td>
                     </tr>
                     <?php

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Galeri_model extends CI_Model{
+class Galery_model extends CI_Model{
 
     public function getContentData($type, $table, $limit, $start){
                       $this->db->limit($limit, $start);
@@ -74,7 +74,7 @@ class Galeri_model extends CI_Model{
         $config['allowed_types']    = 'mp4';
         $config['file_name']        = $time.'.mp4';
         $config['overwrite']		= TRUE;
-        // $config['max_size']             =  2048;
+        // $config['max_size']             =  30048;
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 

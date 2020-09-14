@@ -58,35 +58,11 @@ class Profile extends CI_Controller {
 				return $data;
 			}
 		}else if($type == 'create') {
-			if($content == 'definisi') {
-				$data['head']		= 'Definisi Netlitbang';
-				$data['content']	= '';
-				$data['title']		= 'Definisi';
-				$data['slug']		= 'definisi';
-				$data['script']		= 'admin/profile/'.$content.'-create.js'; 
-	
-				return $data;
-			}else if($content == 'struktur-organisasi') {
-				$data['head'] 		= 'Struktur Organisasi Litbang Kabupaten Bombana';
-				$data['content']	= '';
-				$data['title']		= 'Struktur Organisasi';
-				$data['slug']		= 'struktur-organisasi';
-				$data['script']		= 'admin/profile/'.$content.'-create.js'; 
-	
-				return $data;
-			}else if($content == 'regulasi') {
+			if($content == 'regulasi') {
 				$data['head'] 		= 'Regulasi Litbang Kabupaten Bombana';
 				$data['content']	= 'Informasi regulasi Litbang kabupaten Bombana.';
 				$data['title']		= 'Regulasi';
 				$data['slug']		= 'regulasi';
-				$data['script']		= 'admin/profile/'.$content.'-create.js'; 
-	
-				return $data;
-			}else if($content == 'kontak-kami') {
-				$data['head'] 		= 'Kontak Netlitbang';
-				$data['content']	= 'Informasi kontak resmi netlitbang kabupaten Bombana.';
-				$data['title']		= 'Kontak Kami';
-				$data['slug']		= 'kontak-kami';
 				$data['script']		= 'admin/profile/'.$content.'-create.js'; 
 	
 				return $data;

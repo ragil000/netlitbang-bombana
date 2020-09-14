@@ -31,9 +31,9 @@ class Litbang extends CI_Controller {
 		if($function == 'index') {
 			if($content == 'sosial-pemerintahan') {
 				$data				= $this->__getPagination($content, 'articles');
-				$data['head']		= 'Sosial dan Pemerintahan';
-				$data['content']	= 'Publikasi jurnal tema sosial dan pemerintahan.';
-				$data['title']		= 'Sosial dan Pemerintahan';
+				$data['head']		= 'Sosial Ekonomi dan Pemerintahan';
+				$data['content']	= 'Publikasi jurnal tema sosial ekonomi dan pemerintahan.';
+				$data['title']		= 'Sosial Ekonomi dan Pemerintahan';
 				$data['link_map']	= [
 					[
 						'title'	=> 'beranda',
@@ -44,29 +44,29 @@ class Litbang extends CI_Controller {
 						'slug'	=> NULL
 					],
 					[
-						'title'	=> 'sosial dan pemerintahan',
+						'title'	=> 'sosial ekonomi dan pemerintahan',
 						'slug'	=> NULL
 					],
 				];
 				$data['side_submenu']	= [
 					[
-						'title'	=> 'Ekonomi dan Pembangunan',
+						'title'	=> 'Pembangunan, Inovasi dan Teknologi',
 						'slug'	=> base_url('litbang/ekonomi-pembangunan'),
 						'total'	=> $this->Litbang_model->getTotalData('ekonomi-pembangunan', 'articles')
 					],
-					[
-						'title'	=> 'Inovasi dan Pelayanan Publik',
-						'slug'	=> base_url('litbang/inovasi-pelayanan-publik'),
-						'total' => $this->Litbang_model->getTotalData('inovasi-pelayanan-publik', 'articles')
-					]
+					// [
+					// 	'title'	=> 'Inovasi dan Pelayanan Publik',
+					// 	'slug'	=> base_url('litbang/inovasi-pelayanan-publik'),
+					// 	'total' => $this->Litbang_model->getTotalData('inovasi-pelayanan-publik', 'articles')
+					// ]
 				];
 				
 				return $data;
 			}else if($content == 'ekonomi-pembangunan') {
 				$data				= $this->__getPagination($content, 'articles');
-				$data['head']		= 'Ekonomi dan Pembangunan';
-				$data['content']	= 'Publikasi jurnal tema ekonomi dan pembangunan.';
-				$data['title']		= 'Ekonomi dan Pembangunan';
+				$data['head']		= 'Pembangunan, Inovasi dan Teknologi';
+				$data['content']	= 'Publikasi jurnal tema pembangunan, inovasi dan teknologi.';
+				$data['title']		= 'Pembangunan, Inovasi dan Teknologi';
 				$data['link_map']	= [
 					[
 						'title'	=> 'beranda',
@@ -77,21 +77,21 @@ class Litbang extends CI_Controller {
 						'slug'	=> NULL
 					],
 					[
-						'title'	=> 'ekonomi dan pembangunan',
+						'title'	=> 'pembangunan, inovasi dan teknologi',
 						'slug'	=> NULL
 					],
 				];
 				$data['side_submenu']	= [
 					[
-						'title'	=> 'Sosial dan Pemerintahan',
+						'title'	=> 'Sosial Ekonomi dan Pemerintahan',
 						'slug'	=> base_url('litbang/sosial-pemerintahan'),
 						'total'	=> $this->Litbang_model->getTotalData('sosial-pemerintahan', 'articles')
 					],
-					[
-						'title'	=> 'Inovasi dan Pelayanan Publik',
-						'slug'	=> base_url('litbang/inovasi-pelayanan-publik'),
-						'total' => $this->Litbang_model->getTotalData('inovasi-pelayanan-publik', 'articles')
-					]
+					// [
+					// 	'title'	=> 'Inovasi dan Pelayanan Publik',
+					// 	'slug'	=> base_url('litbang/inovasi-pelayanan-publik'),
+					// 	'total' => $this->Litbang_model->getTotalData('inovasi-pelayanan-publik', 'articles')
+					// ]
 				];
 				
 				return $data;
@@ -132,9 +132,9 @@ class Litbang extends CI_Controller {
 		}else if($function == 'detail') {
 			if($content == 'sosial-pemerintahan') {
 				$data['results']	= $this->Litbang_model->getDetailData('articles', $slug);
-				$data['head']		= 'Sosial dan Pemerintahan';
-				$data['content']	= 'Publikasi jurnal tema sosial dan pemerintahan.';
-				$data['title']		= 'Sosial dan Pemerintahan';
+				$data['head']		= 'Sosial Ekonomi dan Pemerintahan';
+				$data['content']	= 'Publikasi jurnal tema sosial ekonomi dan pemerintahan.';
+				$data['title']		= 'Sosial Ekonomi dan Pemerintahan';
 				$data['link_map']	= [
 					[
 						'title'	=> 'beranda',
@@ -145,7 +145,7 @@ class Litbang extends CI_Controller {
 						'slug'	=> NULL
 					],
 					[
-						'title'	=> 'sosial dan pemerintahan',
+						'title'	=> 'sosial ekonomi dan pemerintahan',
 						'slug'	=> base_url('litbang/sosial-pemerintahan')
 					],
 					[
@@ -155,23 +155,23 @@ class Litbang extends CI_Controller {
 				];
 				$data['side_submenu']	= [
 					[
-						'title'	=> 'Ekonomi dan Pembangunan',
+						'title'	=> 'Pembangunan, Inovasi dan Teknologi',
 						'slug'	=> base_url('litbang/ekonomi-pembangunan'),
 						'total'	=> NULL
 					],
-					[
-						'title'	=> 'Inovasi dan Pelayanan Publik',
-						'slug'	=> base_url('litbang/inovasi-pelayanan-publik'),
-						'total' => NULL
-					]
+					// [
+					// 	'title'	=> 'Inovasi dan Pelayanan Publik',
+					// 	'slug'	=> base_url('litbang/inovasi-pelayanan-publik'),
+					// 	'total' => NULL
+					// ]
 				];
 	
 				return $data;
 			}else if($content == 'ekonomi-pembangunan') {
 				$data['results']	= $this->Litbang_model->getDetailData('articles', $slug);
-				$data['head']		= 'Ekonomi dan Pembangunan';
-				$data['content']	= 'Publikasi jurnal tema ekonomi dan pembangunan.';
-				$data['title']		= 'Ekonomi dan Pembangunan';
+				$data['head']		= 'Pembangunan, Inovasi dan Teknologi';
+				$data['content']	= 'Publikasi jurnal tema pembangunan, inovasi dan teknologi.';
+				$data['title']		= 'Pembangunan, Inovasi dan Teknologi';
 				$data['link_map']	= [
 					[
 						'title'	=> 'beranda',
@@ -182,21 +182,21 @@ class Litbang extends CI_Controller {
 						'slug'	=> NULL
 					],
 					[
-						'title'	=> 'ekonomi dan pembangunan',
+						'title'	=> 'pembangunan, inovasi dan teknologi',
 						'slug'	=> NULL
 					],
 				];
 				$data['side_submenu']	= [
 					[
-						'title'	=> 'Sosial dan Pemerintahan',
+						'title'	=> 'Sosial Ekonomi dan Pemerintahan',
 						'slug'	=> base_url('litbang/sosial-pemerintahan'),
 						'total'	=> $this->Litbang_model->getTotalData('sosial-pemerintahan', 'articles')
 					],
-					[
-						'title'	=> 'Inovasi dan Pelayanan Publik',
-						'slug'	=> base_url('litbang/inovasi-pelayanan-publik'),
-						'total' => $this->Litbang_model->getTotalData('inovasi-pelayanan-publik', 'articles')
-					]
+					// [
+					// 	'title'	=> 'Inovasi dan Pelayanan Publik',
+					// 	'slug'	=> base_url('litbang/inovasi-pelayanan-publik'),
+					// 	'total' => $this->Litbang_model->getTotalData('inovasi-pelayanan-publik', 'articles')
+					// ]
 				];
 	
 				return $data;

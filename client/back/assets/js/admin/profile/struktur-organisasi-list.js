@@ -13,15 +13,11 @@ $('.alert').delay(3500).fadeOut()
 function detailModal(id) {
     $.get(base_url+'admin/profile/detail/struktur-organisasi/'+id).then((result) => {
         result = JSON.parse(result)
-        let file =  '<a href="'+base_url+'uploads/files/'+result[0].file+'" class="btn btn-icon btn-success btn-sm" download>'+
-                      '<span class="btn-inner--icon"><i class="fa fa-download"></i></span>'+
-                    '</a>'+
-                    '<span class="text-medium">'+result[0].file+'</span>'
-
-        $('#date').html(_dateID(result[0].created_at))
+        let image = '<img class="card-img-top" style="width:100%; height:200px; object-fit:cover;" src="'+base_url+'uploads/images/'+result[0].file+'" alt="Gambar">'
         $('#title').html(result[0].title)
+        $('#date').html(_dateID(result[0].created_at))
+        $('#image').html(image)
         $('#content').html(result[0].content)
-        $('#file').html(file)
         $('#button-detail-modal').click()
     })
 }

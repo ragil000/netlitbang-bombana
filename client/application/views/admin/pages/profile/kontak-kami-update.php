@@ -21,14 +21,14 @@
                                 <input type="text" class="form-control rmy-validation text-default" name="title" placeholder="Judul" aria-label="Username" aria-describedby="basic-addon1" value="<?=$data[0]['title']?>">
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        <!-- <div class="col-lg-12">
                             <div class="form-group">
                                 <div class="custom-file">
                                     <input type="file" name="file" id="input-image" class="custom-file-input rmy-validation" data-mime="image/jpeg, image/png" lang="en" value="<?=$data[0]['file']?>">
                                     <label class="custom-file-label" for="input-image"><?=$data[0]['file']?></label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <textarea id="editor" class="rmy-validation" name="content" placeholder="Tuliskan disini" autofocus><?=$data[0]['content']?></textarea>                

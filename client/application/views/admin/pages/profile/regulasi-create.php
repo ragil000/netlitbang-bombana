@@ -1,6 +1,6 @@
 <div class="row mt-5">
     <div class="col-12">
-        <form method="POST" action="<?=base_url('admin/journal/post/'.$slug)?>" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <form method="POST" action="<?=base_url('admin/profile/post/'.$slug)?>" enctype="multipart/form-data" onsubmit="return validateForm()">
             <div class="card shadow">
                 <div class="card-header border-0">
                     <h1><?=$head?></h1>
@@ -37,7 +37,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 text-right">
-                            <button type="button" onclick="window.location='<?=base_url('admin/journal/').$slug?>'" class="btn btn-warning mt-4">Kembali</button>
+                            <button type="button" onclick="window.location='<?=base_url('admin/profile/').$slug?>'" class="btn btn-warning mt-4">Kembali</button>
                             <button type="submit" class="btn btn-default mt-4">Simpan</button>
                         </div>
                     </div>

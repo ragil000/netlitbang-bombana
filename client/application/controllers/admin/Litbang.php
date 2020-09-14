@@ -26,7 +26,7 @@ class Litbang extends CI_Controller {
 				$data['head']		= 'Sosial dan Pemerintahan';
 				$data['content']	= 'Publikasi jurnal tema sosial dan pemerintahan.';
 				$data['title']		= 'Sosial dan Pemerintahan';
-				
+				$data['node_modules']	= 'sweetalert2/dist/sweetalert2.all.min.js';
 				$data['script']		= 'admin/litbang/'.$content.'-list.js'; 
 	
 				return $data;
@@ -35,6 +35,7 @@ class Litbang extends CI_Controller {
 				$data['head'] 		= 'Ekonomi dan Pembangunan';
 				$data['content']	= 'Publikasi jurnal tema ekonomi dan pembangunan.';
 				$data['title']		= 'Ekonomi dan Pembangunan';
+				$data['node_modules']	= 'sweetalert2/dist/sweetalert2.all.min.js';
 				$data['script']		= 'admin/litbang/'.$content.'-list.js'; 
 	
 				return $data;

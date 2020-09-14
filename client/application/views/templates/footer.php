@@ -10,7 +10,7 @@
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Beranda</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Usulan Penelitian</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Hasil Kelitbangan</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Hasil Penelitian</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Publikasi</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Galeri</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Profil</a></li>
@@ -20,7 +20,7 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Menu Lainnya</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Sosial dan Pemerintahan</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Sosial Ekonomi dan Pemerintahan</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Artikel dan Berita</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">SOP Kelitbangan</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Foto Kegiatan</a></li>

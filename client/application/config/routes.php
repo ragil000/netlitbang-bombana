@@ -61,6 +61,10 @@ $route['journal/detail/(:any)/(:any)']          = 'journal/detail/$1/$2';
 $route['journal/(:any)']                        = 'journal/index/$1';
 $route['journal/(:any)/(:num)']                 = 'journal/index/$1/$2';
 
+$route['profile/detail/(:any)/(:any)']          = 'profile/detail/$1/$2';
+$route['profile/(:any)']                        = 'profile/index/$1';
+$route['profile/(:any)/(:num)']                 = 'profile/index/$1/$2';
+
 $route['admin']                                 = 'admin/Auth/index';
 
 $route['admin/litbang/detail/(:any)/(:num)']    = 'admin/litbang/detail/$1/$2';
@@ -76,3 +80,24 @@ $route['admin/journal/update/(:any)/(:num)']    = 'admin/journal/update/$1/$2';
 $route['admin/journal/put/(:any)/(:num)']       = 'admin/journal/put/$1/$2';
 $route['admin/journal/(:any)']                  = 'admin/journal/index/$1';
 $route['admin/journal/(:any)/(:num)']           = 'admin/journal/index/$1/$2';
+
+$route['admin/profile/detail/(:any)/(:num)']    = 'admin/profile/detail/$1/$2';
+$route['admin/profile/create/(:any)']           = 'admin/profile/create/$1';
+$route['admin/profile/update/(:any)/(:num)']    = 'admin/profile/update/$1/$2';
+$route['admin/profile/put/(:any)/(:num)']       = 'admin/profile/put/$1/$2';
+$route['admin/profile/(:any)']                  = 'admin/profile/index/$1';
+$route['admin/profile/(:any)/(:num)']           = 'admin/profile/index/$1/$2';
+
+$route['admin/galery/detail/(:any)/(:num)']    = 'admin/galery/detail/$1/$2';
+$route['admin/galery/create/(:any)']           = 'admin/galery/create/$1';
+$route['admin/galery/update/(:any)/(:num)']    = 'admin/galery/update/$1/$2';
+$route['admin/galery/put/(:any)/(:num)']       = 'admin/galery/put/$1/$2';
+$route['admin/galery/(:any)']                  = 'admin/galery/index/$1';
+$route['admin/galery/(:any)/(:num)']           = 'admin/galery/index/$1/$2';
+
+$route['admin/proposal/detail/(:any)/(:num)']    = 'admin/proposal/detail/$1/$2';
+$route['admin/proposal/create/(:any)']           = 'admin/proposal/create/$1';
+$route['admin/proposal/update/(:any)/(:num)']    = 'admin/proposal/update/$1/$2';
+$route['admin/proposal/put/(:any)/(:num)']       = 'admin/proposal/put/$1/$2';
+$route['admin/proposal/(:any)']                  = 'admin/proposal/index/$1';
+$route['admin/proposal/(:any)/(:num)']           = 'admin/proposal/index/$1/$2';

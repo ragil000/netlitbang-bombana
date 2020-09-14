@@ -6,11 +6,11 @@
           <div class="card shadow">
             <div class="card-header border-0">
               <div class="row">
-                <div class="col-lg-2">
+                <div class="col-lg-4">
                   <h3 class="mb-0 mt-2"><?=$head?></h3>
                 </div>
-                <div class="col-lg-10 text-left">
-                  <a href="<?=base_url('admin/galry/create/video')?>" class="btn btn-primary"><i class="ni ni-single-copy-04"></i> Tambah</a>
+                <div class="col-lg-8 text-left">
+                  <a href="<?=base_url('admin/galery/create/video')?>" class="btn btn-primary"><i class="ni ni-single-copy-04"></i> Tambah</a>
                 </div>
               </div>
             </div>
@@ -27,7 +27,7 @@
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col">video</th>
+                    <!-- <th scope="col">video</th> -->
                     <th scope="col">Judul</th>
                     <th scope="col">Tanggal</th>
                     <th scope="col">Jam</th>
@@ -40,18 +40,18 @@
                         foreach($data as $value) {
                     ?>
                     <tr>
-                        <td>
+                        <!-- <td>
                         <video style="object-fit:cover; width:50px; height:40px;" muted>
                           <source src="movie.mp4" type="video/mp4">
                           Your browser does not support the video tag.
                         </video>
-                        </td>
+                        </td> -->
                         <td><?=!empty($value['title']) ? $value['title'] : '-'?></td>
                         <td><?=_dateShortID($value['created_at'])?></td>
                         <td><?=_timestampToTime($value['created_at'])?></td>
                         <td class="text-right">
                             <a href="#" class="btn btn-sm btn-primary" onclick="detailModal('<?=$value['id']?>')"><i class="fa fa-eye"></i></a>
-                            <a href="<?=base_url('admin/galry/update/video/').$value['id']?>" class="btn btn-sm btn-warning"><i class="fa fa-pen"></i></a>
+                            <a href="<?=base_url('admin/galery/update/video/').$value['id']?>" class="btn btn-sm btn-warning"><i class="fa fa-pen"></i></a>
                             <a href="#" class="btn btn-sm btn-danger" onclick="beforeDelete('<?=$value['id']?>')"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
@@ -88,7 +88,7 @@
                       <div class="modal-body" style="overflow-y: scroll; height:400px;">
                           <h3 id="title">Title</h3>
                           <h6><span id="date"><i class="ni ni-watch-time"></i> 20 Jan 2020</span></h6>
-                          <div id="image"></div>
+                          <div id="video"></div>
                           <div id="content"class="text-medium"></div>
                       </div>
                       <div class="modal-footer">

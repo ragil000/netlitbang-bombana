@@ -6,7 +6,7 @@
           <div class="card shadow">
             <div class="card-header border-0">
               <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-8">
                   <h3 class="mb-0 mt-2"><?=$head?></h3>
                 </div>
               </div>
@@ -43,8 +43,8 @@
                         <td><?=_timestampToTime($value['created_at'])?></td>
                         <td class="text-right">
                             <a href="#" class="btn btn-sm btn-primary" onclick="detailModal('<?=$value['id']?>')"><i class="fa fa-eye"></i></a>
-                            <a href="<?=base_url('admin/journal/update/struktur-organisasi/').$value['id']?>" class="btn btn-sm btn-warning"><i class="fa fa-pen"></i></a>
-                            <a href="#" class="btn btn-sm btn-danger" onclick="beforeDelete('<?=$value['id']?>')"><i class="fa fa-trash"></i></a>
+                            <a href="<?=base_url('admin/profile/update/struktur-organisasi/').$value['id']?>" class="btn btn-sm btn-warning"><i class="fa fa-pen"></i></a>
+                            <!-- <a href="#" class="btn btn-sm btn-danger" onclick="beforeDelete('<?=$value['id']?>')"><i class="fa fa-trash"></i></a> -->
                         </td>
                     </tr>
                     <?php

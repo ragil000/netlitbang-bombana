@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?=base_url('front/')?>assets/img/favicon.png" rel="icon">
+  <link href="<?=base_url('front/')?>assets/img/logo.png" rel="icon">
   <link href="<?=base_url('front/')?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -43,20 +43,20 @@
     <div class="container">
 
       <div class="logo float-left">
-        <h1 class="text-light"><a href="<?=base_url()?>"><span>NETLITBANG</span></a></h1>
+        <!-- <h1 class="text-light"><a href="<?=base_url()?>"><span>NETLITBANG</span></a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="<?=base_url('front/')?>assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <a href="<?=base_url()?>"><img src="<?=base_url('front/')?>assets/img/logo.png" alt="" class="img-fluid"> <span class="text-light">NETLITBANG</span></a>
       </div>
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
           <li id="parent-1" class="parent-menu active"><a href="<?=base_url()?>">Beranda</a></li>
           <li id="parent-2" class="parent-menu"><a href="#">Usulan Penelitian</a></li>
-          <li id="parent-3" class="drop-down parent-menu"><a href="">Hasil Kelitbangan</a>
+          <li id="parent-3" class="drop-down parent-menu"><a href="">Hasil Penelitian</a>
             <ul>
-              <li><a href="<?=base_url('litbang/sosial-pemerintahan')?>">Sosial dan Pemerintahan</a></li>
-              <li><a href="<?=base_url('litbang/ekonomi-pembangunan')?>">Ekonomi dan Pembangunan</a></li>
-              <li><a href="<?=base_url('litbang/inovasi-pelayanan-publik')?>">Inovasi dan Pelayanan Publik</a></li>
+              <li><a href="<?=base_url('litbang/sosial-pemerintahan')?>">Sosial Ekonomi dan Pemerintahan</a></li>
+              <li><a href="<?=base_url('litbang/ekonomi-pembangunan')?>">Pembangunan, Inovasi dan Teknologi</a></li>
+              <!-- <li><a href="<?=base_url('litbang/inovasi-pelayanan-publik')?>">Inovasi dan Pelayanan Publik</a></li> -->
             </ul>
           </li>
           <li id="parent-4" class="drop-down parent-menu"><a href="">Jurnal</a>
@@ -64,10 +64,11 @@
               <li><a href="<?=base_url('journal/sop-kelitbangan')?>">SOP Kelitbangan</a></li>
               <li><a href="<?=base_url('journal/rik-bombana')?>">RIK Kab. Bombana</a></li>
               <li><a href="<?=base_url('journal/agenda-kegiatan')?>">Agenda Kegiatan</a></li>
-              <li><a href="<?=base_url('journal/rekomendasi')?>">Rekomendasi</a></li>
+              <!-- <li><a href="<?=base_url('journal/rekomendasi')?>">Rekomendasi</a></li> -->
               <li><a href="<?=base_url('journal/artikel-berita')?>">Artikel dan Berita</a></li>
             </ul>
           </li>
+          <li id="parent-1" class="parent-menu"><a href="<?=base_url('journal/rekomendasi')?>">Rekomendasi</a></li>
           <li id="parent-5" class="drop-down parent-menu"><a href="">Galeri</a>
             <ul>
               <li><a href="#">Foto Kegiatan</a></li>
@@ -76,10 +77,10 @@
           </li>
           <li id="parent-6" class="drop-down parent-menu"><a href="">Profil</a>
             <ul>
-              <li><a href="#">Definisi</a></li>
-              <li><a href="#">Struktur Organisasi</a></li>
-              <li><a href="#">Regulasi</a></li>
-              <li><a href="#">Kontak Kami</a></li>
+              <li><a href="<?=base_url('profile/definisi')?>">Definisi</a></li>
+              <li><a href="<?=base_url('profile/struktur-organisasi')?>">Struktur Organisasi</a></li>
+              <li><a href="<?=base_url('profile/regulasi')?>">Regulasi</a></li>
+              <li><a href="<?=base_url('profile/kontak-kami')?>">Kontak Kami</a></li>
             </ul>
           </li>
         </ul>

@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   z-index: 997;
   transition: all 0.5s;
   padding: 20px 0;
-  background: #1e4356;
+  background: rgb(255, 171, 25);
 }
 
 #header.header-transparent {
@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 }
 
 #header.header-scrolled {
-  background: rgba(30, 67, 86, 0.8);
+  background: rgba(255, 171, 25, 0.8);
   height: 60px;
   padding: 10px 0;
 }
@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #a2cce3;
+  color: #0c3d57;
   text-decoration: none;
 }
 
@@ -329,7 +329,9 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   top: 0;
   width: 130%;
   height: 95%;
-  background: linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("../img/hero-bg.jpg") center top no-repeat;
+  background: linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 0;
   border-radius: 0 0 50% 50%;
   transform: translateX(-50%) rotate(0deg);
@@ -2181,7 +2183,8 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #0b212d;
+  /* background: #0b212d; */
+  background: rgb(216, 138, 5);
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
@@ -2189,7 +2192,8 @@ section {
 
 #footer .footer-newsletter {
   padding: 50px 0;
-  background: #0d2735;
+  background: rgb(255, 171, 25);
+  /* background: rgb(255, 171, 25); */
 }
 
 #footer .footer-newsletter h4 {
@@ -2198,7 +2202,7 @@ section {
   padding: 0;
   line-height: 1;
   font-weight: 600;
-  color: #a2cce3;
+  color: #0c3d57;
 }
 
 #footer .footer-newsletter form {
@@ -2236,9 +2240,9 @@ section {
 }
 
 #footer .footer-top {
-  background: #0d2735;
-  border-top: 1px solid #17455e;
-  border-bottom: 1px solid #123649;
+  background: rgb(255, 171, 25);
+  border-top: 1px solid rgb(255, 171, 25);
+  border-bottom: 1px solid rgb(255, 171, 25);
   padding: 60px 0 30px 0;
 }
 
@@ -2251,7 +2255,7 @@ section {
   margin: 0 0 20px 0;
   padding: 2px 0 2px 0;
   line-height: 1;
-  color: #a2cce3;
+  color: #0c3d57;
   font-weight: 600;
 }
 
@@ -2287,7 +2291,7 @@ section {
 #footer .footer-top h4 {
   font-size: 18px;
   font-weight: 600;
-  color: #a2cce3;
+  color: #0c3d57;
   position: relative;
   padding-bottom: 12px;
 }
@@ -2304,7 +2308,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #a2cce3;
+  color: #0c3d57;
   font-size: 18px;
   line-height: 1;
 }
@@ -2327,7 +2331,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: #a2cce3;
+  color: #0c3d57;
 }
 
 #footer .footer-top .footer-contact {
@@ -2351,5 +2355,5 @@ section {
 }
 
 #footer .credits a {
-  color: #a2cce3;
+  color: #0c3d57;
 }

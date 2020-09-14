@@ -26,7 +26,7 @@
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <textarea class="form-control rmy-validation text-default" name="title" placeholder="Judul" aria-label="Username" aria-describedby="basic-addon1"><?=$data[0]['title']?><textarea>
+                                <textarea class="form-control rmy-validation text-default" name="title" placeholder="Judul" aria-label="Username" aria-describedby="basic-addon1"><?=$data[0]['title']?></textarea>
                             </div>
                         </div>
                     </div>

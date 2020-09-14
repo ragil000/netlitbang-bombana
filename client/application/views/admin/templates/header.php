@@ -87,8 +87,13 @@
                     <!-- Navigation -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?=base_url('admin/journal')?>">
+                            <a class="nav-link" id="beranda" href="<?=base_url('admin/journal')?>">
                                 <i class="ni ni-tv-2 text-primary"></i> Beranda
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="rekomendasi" href="<?=base_url('admin/journal/rekomendasi')?>">
+                                <i class="ni ni-collection text-purple"></i> Rekomendasi
                             </a>
                         </li>
                         <li class="nav-item">
@@ -113,11 +118,11 @@
                                         <span class="sidenav-normal"> Agenda Kegiatan </span>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a href="<?=base_url('admin/journal/rekomendasi')?>" class="nav-link" id="child-nav-journal-4">
                                         <span class="sidenav-normal"> Rekomendasi </span>
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-item">
                                         <a href="<?=base_url('admin/journal/artikel-berita')?>" class="nav-link" id="child-nav-journal-5">
                                         <span class="sidenav-normal"> Artikel/Berita </span>
@@ -129,31 +134,31 @@
                         <li class="nav-item">
                             <a class="nav-link" id="parent-nav-litbang" href="#nav-litbang" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="nav-litbang">
                                 <i class="ni ni-single-copy-04 text-primary"></i>
-                                <span class="nav-link-text">Hasil Kelitbangan</span>
+                                <span class="nav-link-text">Hasil Penelitian</span>
                             </a>
                             <div class="collapse show" id="nav-litbang">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
                                         <a href="<?=base_url('admin/litbang/sosial-pemerintahan')?>" class="nav-link active" id="child-nav-litbang-1">
-                                        <span class="sidenav-normal"> Sosial dan Pemerintahan </span>
+                                        <span class="sidenav-normal"> Sosial Ekonomi dan Pemerintahan </span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="<?=base_url('admin/litbang/ekonomi-pembangunan')?>" class="nav-link active" id="child-nav-litbang-2">
-                                        <span class="sidenav-normal"> Ekonomi dan Pembangunan </span>
+                                        <span class="sidenav-normal"> Pembangunan, Inovasi dan Teknologi </span>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a href="<?=base_url('admin/litbang/inovasi-pelayanan-publik')?>" class="nav-link active" id="child-nav-litbang-3">
                                         <span class="sidenav-normal"> Inovasi dan Pelayanan Publik </span>
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="parent-nav-profile" href="#nav-profile" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="nav-profile">
-                                <i class="ni ni-single-copy-04 text-primary"></i>
+                                <i class="ni ni-ui-04 text-success"></i>
                                 <span class="nav-link-text">Profil</span>
                             </a>
                             <div class="collapse show" id="nav-profile">
@@ -176,6 +181,46 @@
                                     <li class="nav-item">
                                         <a href="<?=base_url('admin/profile/kontak-kami')?>" class="nav-link active" id="child-nav-profile-4">
                                         <span class="sidenav-normal"> Kontak Kami </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="parent-nav-galery" href="#nav-galery" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="nav-galery">
+                                <i class="ni ni-image text-danger"></i>
+                                <span class="nav-link-text">Galeri</span>
+                            </a>
+                            <div class="collapse show" id="nav-galery">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="<?=base_url('admin/galery/foto-kegiatan')?>" class="nav-link" id="child-nav-galery-1">
+                                        <span class="sidenav-normal"> Kumpulan Foto </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?=base_url('admin/galery/video')?>" class="nav-link" id="child-nav-galery-2">
+                                        <span class="sidenav-normal"> Kumpulan Video </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="parent-nav-proposal" href="#nav-proposal" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="nav-proposal">
+                                <i class="ni ni-books text-default"></i>
+                                <span class="nav-link-text">Usulan Penelitian</span>
+                            </a>
+                            <div class="collapse show" id="nav-proposal">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="<?=base_url('admin/proposal/instansi')?>" class="nav-link" id="child-nav-proposal-1">
+                                        <span class="sidenav-normal"> Instansi </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?=base_url('admin/proposal/usulan-penelitian')?>" class="nav-link" id="child-nav-proposal-2">
+                                        <span class="sidenav-normal"> Usulan Penelitian </span>
                                         </a>
                                     </li>
                                 </ul>

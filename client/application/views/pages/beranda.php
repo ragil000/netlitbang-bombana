@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
             <div class="icon-box icon-box-pink">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <div class="icon"><i class="bx bx-file"></i></div>
               <h4 class="title"><a href="">Usulan Penelitian</a></h4>
               <p class="description">Anda dapat mengajukan usulan penelitian pada menu ini.</p>
             </div>
@@ -16,22 +16,22 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box icon-box-cyan">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Hasil Kelitbangan</a></h4>
-              <p class="description">Anda dapat melihat dokumen hasil kelitbangan pada menu ini.</p>
+              <h4 class="title"><a href="">Hasil Penelitian</a></h4>
+              <p class="description">Anda dapat melihat dokumen hasil penelitian pada menu ini.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box icon-box-green">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Publikasi</a></h4>
-              <p class="description">Anda dapat melihat segala publikasi Litbang kabupaten Bombana seperti berita dan agenda kegiatan pada menu ini.</p>
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">Jurnal</a></h4>
+              <p class="description">Anda dapat melihat informasi jurnal Litbang kabupaten Bombana seperti berita dan agenda kegiatan pada menu ini.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box icon-box-blue">
-              <div class="icon"><i class="bx bx-world"></i></div>
+              <div class="icon"><i class="bx bx-file"></i></div>
               <h4 class="title"><a href="">Galeri</a></h4>
               <p class="description">Anda dapat melihat foto-foto kegiatan serta video kegiatan Litbang kabupaten Bombana pada menu ini.</p>
             </div>
