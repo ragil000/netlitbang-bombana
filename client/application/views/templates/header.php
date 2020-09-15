@@ -51,7 +51,7 @@
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
           <li id="parent-1" class="parent-menu active"><a href="<?=base_url()?>">Beranda</a></li>
-          <li id="parent-2" class="parent-menu"><a href="#">Usulan Penelitian</a></li>
+          <li id="parent-2" class="parent-menu"><a href="<?=base_url('usulan-penelitian')?>">Usulan Penelitian</a></li>
           <li id="parent-3" class="drop-down parent-menu"><a href="">Hasil Penelitian</a>
             <ul>
               <li><a href="<?=base_url('litbang/sosial-pemerintahan')?>">Sosial Ekonomi dan Pemerintahan</a></li>

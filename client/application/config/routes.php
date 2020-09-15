@@ -65,6 +65,9 @@ $route['profile/detail/(:any)/(:any)']          = 'profile/detail/$1/$2';
 $route['profile/(:any)']                        = 'profile/index/$1';
 $route['profile/(:any)/(:num)']                 = 'profile/index/$1/$2';
 
+$route['usulan-penelitian']                     = 'penelitian/index';
+$route['penelitian/post']                       = 'penelitian/post';
+
 $route['admin']                                 = 'admin/Auth/index';
 
 $route['admin/litbang/detail/(:any)/(:num)']    = 'admin/litbang/detail/$1/$2';
