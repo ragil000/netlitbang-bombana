@@ -34,6 +34,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <script src="<?=base_url('front/')?>assets/vendor/jquery/jquery.min.js"></script>
 </head>
 
 <body>
@@ -68,14 +69,14 @@
               <li><a href="<?=base_url('journal/artikel-berita')?>">Artikel dan Berita</a></li>
             </ul>
           </li>
-          <li id="parent-1" class="parent-menu"><a href="<?=base_url('journal/rekomendasi')?>">Rekomendasi</a></li>
-          <li id="parent-5" class="drop-down parent-menu"><a href="">Galeri</a>
+          <li id="parent-5" class="parent-menu"><a href="<?=base_url('journal/rekomendasi')?>">Rekomendasi</a></li>
+          <li id="parent-6" class="drop-down parent-menu"><a href="">Galeri</a>
             <ul>
-              <li><a href="#">Foto Kegiatan</a></li>
-              <li><a href="#">Video</a></li>
+              <li><a href="<?=base_url('galery/foto-kegiatan')?>">Foto Kegiatan</a></li>
+              <li><a href="<?=base_url('galery/video')?>">Video</a></li>
             </ul>
           </li>
-          <li id="parent-6" class="drop-down parent-menu"><a href="">Profil</a>
+          <li id="parent-7" class="drop-down parent-menu"><a href="">Profil</a>
             <ul>
               <li><a href="<?=base_url('profile/definisi')?>">Definisi</a></li>
               <li><a href="<?=base_url('profile/struktur-organisasi')?>">Struktur Organisasi</a></li>

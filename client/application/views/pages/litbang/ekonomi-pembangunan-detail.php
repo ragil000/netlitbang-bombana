@@ -118,3 +118,8 @@
         </section><!-- End Blog Section -->
 
     </main><!-- End #main -->
+
+    <script>
+        $('.parent-menu').removeClass('active');
+        $('#parent-3').addClass('active');
+    </script>

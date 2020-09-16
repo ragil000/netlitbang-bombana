@@ -5,6 +5,8 @@ class Proposal_model extends CI_Model{
 
     public function getContentData($table, $limit, $start){
         if($table == 'proposals') {
+                        $this->db->join('agencies', 'proposals.agency=agencies.id');
+                        $this->db->select('proposals.id, proposals.title, proposals.problem, proposals.purpose, proposals.email, proposals.tor, proposals.icp, proposals.status, proposals.created_by, proposals.created_at, proposals.updated_by, proposals.updated_at, agencies.title as instansi');
                         $this->db->limit($limit, $start);
                         $this->db->order_by('status', 'DESC');
                         $this->db->order_by('created_at', 'DESC');
@@ -24,7 +26,11 @@ class Proposal_model extends CI_Model{
     }
 
     public function getDetail($table, $id){
-        $results    = $this->db->get_where($table, ['id' => $id])->result_array();
+                    $this->db->join('agencies', 'proposals.agency=agencies.id');
+                    $this->db->select('proposals.id, proposals.title, proposals.problem, proposals.purpose, proposals.email, proposals.tor, proposals.icp, proposals.status, proposals.created_by, proposals.created_at, proposals.updated_by, proposals.updated_at, agencies.title as instansi');
+                    $this->db->order_by('status', 'DESC');
+                    $this->db->order_by('created_at', 'DESC');
+        $results    = $this->db->get_where($table, [$table.'.id' => $id])->result_array();
         return $results;
     }
 

@@ -20,7 +20,7 @@ class Auth extends CI_Controller {
         if($check->num_rows() > 0) {
             $row    = $check->result();
             $this->session->set_userdata(['auth_login' => TRUE, 'id' => $row[0]->id, 'username' => $row[0]->username ]);
-            redirect('admin/Journal');
+            redirect('admin/dashboard');
         }else {
             $this->session->set_flashdata(['flash_message' => TRUE, 'message' => 'Email atau password tidak valid']);
             redirect('admin/Auth');
@@ -29,6 +29,6 @@ class Auth extends CI_Controller {
 
     public function logout() {
         session_destroy();
-        redirect('admin/Journal');
+        redirect('admin/dashboard');
     }
 }

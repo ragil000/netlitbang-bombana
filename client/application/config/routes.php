@@ -65,10 +65,16 @@ $route['profile/detail/(:any)/(:any)']          = 'profile/detail/$1/$2';
 $route['profile/(:any)']                        = 'profile/index/$1';
 $route['profile/(:any)/(:num)']                 = 'profile/index/$1/$2';
 
+$route['galery/detail/(:any)/(:any)']          = 'galery/detail/$1/$2';
+$route['galery/(:any)']                        = 'galery/index/$1';
+$route['galery/(:any)/(:num)']                 = 'galery/index/$1/$2';
+
 $route['usulan-penelitian']                     = 'penelitian/index';
 $route['penelitian/post']                       = 'penelitian/post';
 
 $route['admin']                                 = 'admin/Auth/index';
+
+$route['admin/dashboard']                       = 'admin/dashboard/index';
 
 $route['admin/litbang/detail/(:any)/(:num)']    = 'admin/litbang/detail/$1/$2';
 $route['admin/litbang/create/(:any)']           = 'admin/litbang/create/$1';
