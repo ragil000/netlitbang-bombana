@@ -13,15 +13,23 @@ $('.alert').delay(3500).fadeOut()
 function detailModal(id) {
     $.get(base_url+'admin/proposal/detail/usulan-penelitian/'+id).then((result) => {
         result = JSON.parse(result)
-        let file =  '<a href="'+base_url+'uploads/files/'+result[0].file+'" class="btn btn-icon btn-success btn-sm" download>'+
+        console.log(result)
+        let tor =  '<a href="'+base_url+'uploads/files/'+result[0].tor+'" class="btn btn-icon btn-success btn-sm" download>'+
                       '<span class="btn-inner--icon"><i class="fa fa-download"></i></span>'+
                     '</a>'+
-                    '<span class="text-medium">'+result[0].file+'</span>'
+                    '<span class="text-medium">'+result[0].tor+'</span>'
+        let icp =  '<a href="'+base_url+'uploads/files/'+result[0].icp+'" class="btn btn-icon btn-success btn-sm" download>'+
+                    '<span class="btn-inner--icon"><i class="fa fa-download"></i></span>'+
+                  '</a>'+
+                  '<span class="text-medium">'+result[0].icp+'</span>'
 
         $('#date').html(_dateID(result[0].created_at))
         $('#title').html(result[0].title)
-        $('#content').html(result[0].content)
-        $('#file').html(file)
+        $('#instansi').html(result[0].instansi)
+        $('#problem').html(result[0].problem)
+        $('#purpose').html(result[0].purpose)
+        $('#tor').html(tor)
+        $('#icp').html(icp)
         $('#button-detail-modal').click()
     })
 }

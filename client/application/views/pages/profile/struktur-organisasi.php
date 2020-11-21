@@ -36,7 +36,7 @@
                                 <a href="#"><?=$results[0]['title']?></a>
                             </h2>
                             
-                            <div class="entry-img mt-3">
+                            <div class="mt-3 mb-5">
                                 <img src="<?=base_url('uploads/images/').$results[0]['file']?>" alt="" class="img-fluid">
                             </div>
 
@@ -120,3 +120,8 @@
         </section><!-- End Blog Section -->
 
     </main><!-- End #main -->
+
+    <script>
+        $('.parent-menu').removeClass('active');
+        $('#parent-7').addClass('active');
+    </script>

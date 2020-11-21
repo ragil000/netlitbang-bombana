@@ -87,7 +87,7 @@
                     <!-- Navigation -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" id="beranda" href="<?=base_url('admin/journal')?>">
+                            <a class="nav-link" id="beranda" href="<?=base_url('admin/dashboard')?>">
                                 <i class="ni ni-tv-2 text-primary"></i> Beranda
                             </a>
                         </li>
@@ -298,7 +298,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h5 class="card-title text-uppercase text-muted mb-0">Usulan Penelitian</h5>
-                                                <span class="h2 font-weight-bold mb-0">350,897</span>
+                                                <span class="h2 font-weight-bold mb-0"><?=@$usulan ? $usulan : 0?></span>
                                             </div>
                                             <div class="col-auto">
                                                 <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -307,7 +307,7 @@
                                             </div>
                                         </div>
                                         <p class="mt-3 mb-0 text-muted text-sm">
-                                            <span class="text-nowrap">Tahun 2020</span>
+                                            <span class="text-nowrap">Tahun <?=@$usulanTahun ? $usulanTahun : date('Y')?></span>
                                         </p>
                                     </div>
                                 </div>
@@ -319,7 +319,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h5 class="card-title text-uppercase text-muted mb-0">Jurnal Dipublikasi</h5>
-                                                <span class="h2 font-weight-bold mb-0">2,356</span>
+                                                <span class="h2 font-weight-bold mb-0"><?=@$jurnal ? $jurnal : 0?></span>
                                             </div>
                                             <div class="col-auto">
                                                 <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -328,7 +328,7 @@
                                             </div>
                                         </div>
                                         <p class="mt-3 mb-0 text-muted text-sm">
-                                            <span class="text-nowrap">Keseluruhan</span>
+                                            <span class="text-nowrap">Tahun <?=@$jurnalTahun ? $jurnalTahun : date('Y')?></span>
                                         </p>
                                     </div>
                                 </div>
@@ -340,7 +340,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h5 class="card-title text-uppercase text-muted mb-0">Artikel dan Berita</h5>
-                                                <span class="h2 font-weight-bold mb-0">350,897</span>
+                                                <span class="h2 font-weight-bold mb-0"><?=@$artikel ? $artikel : 0?></span>
                                             </div>
                                             <div class="col-auto">
                                                 <div class="icon icon-shape bg-info text-white rounded-circle shadow">
@@ -349,7 +349,7 @@
                                             </div>
                                         </div>
                                         <p class="mt-3 mb-0 text-muted text-sm">
-                                            <span class="text-nowrap">Tahun 2020</span>
+                                            <span class="text-nowrap">Tahun <?=@$artikelTahun ? $artikelTahun : date('Y')?></span>
                                         </p>
                                     </div>
                                 </div>

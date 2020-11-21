@@ -9,11 +9,15 @@ class Litbang extends CI_Controller {
 			redirect('admin/Auth');
 		}
 		$this->load->model('admin/Litbang_model');
+		$this->load->model('admin/All_model');
 	}
 
 	public function index($content = 'sosial-pemerintahan', $page = 1)
 	{
 		$data	= $this->__getContentData('list', $content);
+		$data['usulan'] = $this->All_model->getUsulan();
+		$data['artikel'] = $this->All_model->getArtikel();
+		$data['jurnal'] = $this->All_model->getJurnal();
 		$this->load->view('admin/templates/header', $data);
 		$this->load->view('admin/pages/litbang/'.$content.'-list');
 		$this->load->view('admin/templates/footer');
@@ -359,7 +363,9 @@ class Litbang extends CI_Controller {
 		$data['date_start']	= date('Y-m-d');
 		$date_end 			= strtotime("+1 day", strtotime($data['date_start']));
 		$data['date_end']	= date("Y-m-d", $date_end);
-
+		$data['usulan'] = $this->All_model->getUsulan();
+		$data['artikel'] = $this->All_model->getArtikel();
+		$data['jurnal'] = $this->All_model->getJurnal();
 		$this->load->view('admin/templates/header', $data);
 		$this->load->view('admin/pages/litbang/'.$content.'-create');
 		$this->load->view('admin/templates/footer');
@@ -368,6 +374,9 @@ class Litbang extends CI_Controller {
 	public function update($content, $id) {
 		$data		= $this->__getContentData('update', $content, $id);
 		$data['id']	= $id;
+		$data['usulan'] = $this->All_model->getUsulan();
+		$data['artikel'] = $this->All_model->getArtikel();
+		$data['jurnal'] = $this->All_model->getJurnal();
 		$this->load->view('admin/templates/header', $data);
 		$this->load->view('admin/pages/litbang/'.$content.'-update');
 		$this->load->view('admin/templates/footer');

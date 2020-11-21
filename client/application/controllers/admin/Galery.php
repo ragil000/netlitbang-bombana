@@ -9,11 +9,15 @@ class Galery extends CI_Controller {
 			redirect('admin/Auth');
 		}
 		$this->load->model('admin/Galery_model');
+		$this->load->model('admin/All_model');
 	}
 
 	public function index($content = 'foto-kegiatan', $page = 1)
 	{
 		$data	= $this->__getContentData('list', $content);
+		$data['usulan'] = $this->All_model->getUsulan();
+		$data['artikel'] = $this->All_model->getArtikel();
+		$data['jurnal'] = $this->All_model->getJurnal();
 		$this->load->view('admin/templates/header', $data);
 		$this->load->view('admin/pages/galery/'.$content.'-list');
 		$this->load->view('admin/templates/footer');
@@ -366,7 +370,9 @@ class Galery extends CI_Controller {
 
 	public function create($content) {
 		$data				= $this->__getContentData('create', $content);
-
+		$data['usulan'] = $this->All_model->getUsulan();
+		$data['artikel'] = $this->All_model->getArtikel();
+		$data['jurnal'] = $this->All_model->getJurnal();
 		$this->load->view('admin/templates/header', $data);
 		$this->load->view('admin/pages/galery/'.$content.'-create');
 		$this->load->view('admin/templates/footer');
@@ -375,6 +381,9 @@ class Galery extends CI_Controller {
 	public function update($content, $id) {
 		$data		= $this->__getContentData('update', $content, $id);
 		$data['id']	= $id;
+		$data['usulan'] = $this->All_model->getUsulan();
+		$data['artikel'] = $this->All_model->getArtikel();
+		$data['jurnal'] = $this->All_model->getJurnal();
 		$this->load->view('admin/templates/header', $data);
 		$this->load->view('admin/pages/galery/'.$content.'-update');
 		$this->load->view('admin/templates/footer');

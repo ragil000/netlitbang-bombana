@@ -133,3 +133,8 @@
         </section><!-- End Blog Section -->
 
     </main><!-- End #main -->
+
+    <script>
+        $('.parent-menu').removeClass('active');
+        $('#parent-5').addClass('active');
+    </script>
