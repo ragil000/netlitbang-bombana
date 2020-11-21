@@ -42,13 +42,13 @@
   <header id="header" class="fixed-top header-transparent">
     <div class="container">
 
-      <div class="logo float-left">
+      <div class="logo float-left pr-5">
         <!-- <h1 class="text-light"><a href="<?=base_url()?>"><span>NETLITBANG</span></a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
         <a href="<?=base_url()?>"><img src="<?=base_url('front/')?>assets/img/logo.png" alt="" class="img-fluid"> <span class="text-light">NETLITBANG</span></a>
       </div>
 
-      <nav class="nav-menu float-right d-none d-lg-block">
+      <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li id="parent-1" class="parent-menu active"><a href="<?=base_url()?>">Beranda</a></li>
           <li id="parent-2" class="parent-menu"><a href="#">Usulan Penelitian</a></li>
@@ -85,6 +85,10 @@
           </li>
         </ul>
       </nav><!-- .nav-menu -->
+
+      <div class="logo float-right">
+        <a href="<?=base_url()?>"><img src="<?=base_url('front/')?>assets/img/logo-kanan.png" alt="" class="img-fluid"> <span class="text-light"></span></a>
+      </div>
 
     </div>
   </header><!-- End Header -->
